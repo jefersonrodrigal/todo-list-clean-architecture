@@ -194,4 +194,4 @@ curl http://localhost:5000/api/todo
 
 ## 👨‍💻 Autor
 
-Desenvolvido Jeferson Almeida
+Desenvolvido por Jeferson Almeida
