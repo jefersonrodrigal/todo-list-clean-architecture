@@ -1,12 +1,16 @@
 # 🧾 TodoList API — Clean Architecture
 
+![.NET](https://img.shields.io/badge/.NET-8.0-purple)
+![Build](https://img.shields.io/badge/build-passing-brightgreen)
+![Architecture](https://img.shields.io/badge/architecture-clean--architecture-orange)
+
 Projeto de exemplo implementando uma API de gerenciamento de tarefas (**Todo List**) utilizando:
 
-- .NET 10
-- ASP.NET Core (Controllers)
-- Entity Framework Core
-- SQLite
-- Clean Architecture
+* .NET
+* ASP.NET Core (Controllers)
+* Entity Framework Core
+* SQLite
+* Clean Architecture
 
 ---
 
@@ -15,29 +19,43 @@ Projeto de exemplo implementando uma API de gerenciamento de tarefas (**Todo Lis
 O projeto segue os princípios da **Clean Architecture**, separando responsabilidades em camadas:
 
 ```
-TodoListCleanArchitecture
-├── Domain
-├── Application
-├── Infrastructure
-└── WebApi
+          ┌──────────────────────────┐
+          │        WebApi            │
+          │ (Controllers / HTTP)     │
+          └──────────┬───────────────┘
+                     │
+          ┌──────────▼───────────────┐
+          │      Application         │
+          │   (Use Cases / DTOs)     │
+          └──────────┬───────────────┘
+                     │
+          ┌──────────▼───────────────┐
+          │        Domain            │
+          │   (Entities / Rules)     │
+          └──────────┬───────────────┘
+                     │
+          ┌──────────▼───────────────┐
+          │     Infrastructure       │
+          │ (EF Core / Database)     │
+          └──────────────────────────┘
 ```
 
 ### 📦 Camadas
 
-- **Domain** → Entidades e regras de negócio
-- **Application** → Use Cases (casos de uso)
-- **Infrastructure** → Acesso a dados (EF Core, SQLite)
-- **WebApi** → Controllers e configuração da API
+* **Domain** → Entidades e regras de negócio
+* **Application** → Use Cases (casos de uso)
+* **Infrastructure** → Acesso a dados (EF Core, SQLite)
+* **WebApi** → Controllers e configuração da API
 
 ---
 
 ## 🚀 Tecnologias
 
-- .NET 10
-- ASP.NET Core
-- EF Core
-- SQLite
-- Swagger
+* .NET
+* ASP.NET Core
+* EF Core
+* SQLite
+* Swagger
 
 ---
 
@@ -108,6 +126,47 @@ Content-Type: application/json
 
 ---
 
+## 🧪 Exemplos com cURL
+
+### Criar tarefa
+
+```bash
+curl -X POST http://localhost:5000/api/todo \
+  -H "Content-Type: application/json" \
+  -d '{
+    "title": "Estudar Clean Architecture"
+  }'
+```
+
+### Listar tarefas
+
+```bash
+curl http://localhost:5000/api/todo
+```
+
+---
+
+## 📮 Postman
+
+### Criar request
+
+* Método: POST
+* URL: [http://localhost:5000/api/todo](http://localhost:5000/api/todo)
+* Body (JSON):
+
+```json
+{
+  "title": "Aprender .NET"
+}
+```
+
+### Listar
+
+* Método: GET
+* URL: [http://localhost:5000/api/todo](http://localhost:5000/api/todo)
+
+---
+
 ## 📘 Exemplo de resposta
 
 ```json
@@ -124,14 +183,15 @@ Content-Type: application/json
 
 ## 🧠 Conceitos aplicados
 
-- Clean Architecture
-- Separation of Concerns
-- Dependency Injection
-- Repository Pattern
-- Use Case Pattern
+* Clean Architecture
+* Separation of Concerns
+* Dependency Injection
+* Repository Pattern
+* Use Case Pattern
 
 ---
 
+
 ## 👨‍💻 Autor
 
-Desenvolvido por Jeferson Almeida
+Desenvolvido Jeferson Almeida
