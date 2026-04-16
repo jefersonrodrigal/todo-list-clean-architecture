@@ -33,7 +33,7 @@ TodoListCleanArchitecture
 
 ## 🚀 Tecnologias
 
-- .NET 8
+- .NET 10
 - ASP.NET Core
 - EF Core
 - SQLite
