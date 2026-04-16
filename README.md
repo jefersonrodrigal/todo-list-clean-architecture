@@ -1,6 +1,6 @@
 # 🧾 TodoList API — Clean Architecture
 
-![.NET](https://img.shields.io/badge/.NET-8.0-purple)
+![.NET](https://img.shields.io/badge/.NET-10.0-purple)
 ![Build](https://img.shields.io/badge/build-passing-brightgreen)
 ![Architecture](https://img.shields.io/badge/architecture-clean--architecture-orange)
 
